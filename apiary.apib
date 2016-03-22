@@ -3,35 +3,96 @@ HOST: http://polls.apiblueprint.org/
 
 # majesticchai
 
-Polls is a simple API allowing consumers to view polls and vote in them.
+Polls is a simple API allowing consumers to view menu items and and location.
 
-## Questions Collection [/questions]
+## Majestic Thai Collection [/menu]
 
-### List All Questions [GET]
+### Restaurant Menu [GET]
 
 + Response 200 (application/json)
-
-        [
-            {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
-                    {
-                        "choice": "Swift",
-                        "votes": 2048
+                
+        
+                [   
+                {
+                        "item": "Garden Rolls (5pcs)",
+                        "description": "Stuffed with crystal thread noodles, carrot and cabbage then deep fried until golden brown and served with our sweet and sour sauce.",
+                        "price" : 595,
+                        "category" : "appetizers",
+                        "id" : 1
                     }, {
-                        "choice": "Python",
-                        "votes": 1024
+                        "item": "Fresh Spring Rolls (2 PCS.)",
+                        "description": "Spring roll sheets freshly wrapped with back tofu, carrots, lettuce, cucumbers, mint basil, and crystal thread noodles. They are served with peanut sauce.",
+                        "price" : 525,
+                        "category" : "appetizers",
+                        "id" : 2
                     }, {
-                        "choice": "Objective-C",
-                        "votes": 512
+                        "item": "Shrimp In The Blanket",
+                        "description": "Marinated jumbo shrimp, wrapped in an egg roll skin and lightly fried. They are served with sweet and sour sauce.",
+                        "price" : 795,
+                        "category" : "appetizers",
+                        "id" : 3
                     }, {
-                        "choice": "Ruby",
-                        "votes": 256
-                    }
+                        "item": "Yellow Curry",
+                        "description": "Mild yellow curry, containing rich flavors of curry powder, coconut milk, potatoes, onions and carrots. Choice of chicken, pork, tofu, mock chicken, beef, shrimp($2), roasted duck($3.45), or seafood ($5.45).",
+                        "price" : 950,
+                        "category" : "dinner",
+                        "id" : 4
+                    },  {
+                        "item": "Pad Thai",
+                        "description": "One of the most famous Thai rice noodles dish cooked with egg, bean spouts, tofu and sprinkled with ground peanut. Choice of chicken, pork, tofu, mock chicken, beef, shrimp($2), roast duck ($4), or seafood ($6).",
+                        "price" : 895,
+                        "category" : "dinner",
+                        "id" : 5
+                    }, {
+                        "item": "Tropical Fried Rice",
+                        "description": "Stir fried steamed rice with pineapple, onions, tomatoes, raisins, cashew nuts mixed in Thai soy sauce with a touch of curry powder. Choice of chicken, pork, tofu, beef, or shrimp($2).",
+                        "price" : 895,
+                        "category" : "dinner",
+                        "id" : 6
+                    }, {
+                        "item": "Thai Iced Coffee",
+                        "description": "",
+                        "price" : 250,
+                        "category" : "drinks",
+                        "id" : 7
+                    }, {
+                        "item": "Thai Iced Tea With Tapioca",
+                        "description": "",
+                        "price" : 350,
+                        "category" : "drinks",
+                        "id" : 8
+                    }, {
+                        "item": "Thai Iced Tea",
+                        "description": "",
+                        "price" : 250,
+                        "category" : "drinks",
+                        "id" : 9
+                    }, {
+                        "item": "Honey Banana",
+                        "description": "",
+                        "price" : 595,
+                        "category" : "dessert",
+                        "id" : 10
+                    }, {
+                        "item": "Sticky Rice And Ice Cream",
+                        "description": "",
+                        "price" : 695,
+                        "category" : "dessert",
+                        "id" : 11
+                    }, {
+                        "item": "Coconut Ice Cream",
+                        "description": "",
+                        "price" : 350,
+                        "category" : "dessert",
+                        "id" : 12
+                    } 
                 ]
-            }
-        ]
+            
+            
+## Question [/questions/{question_id}]
+
++ Parameters
+    + question_id (number) - ID of the Question in the form of an integer
 
 ### Create a New Question [POST]
 
@@ -42,14 +103,54 @@ form of choices.
 + Request (application/json)
 
         {
-            "question": "Favourite programming language?",
-            "choices": [
-                "Swift",
-                "Python",
-                "Objective-C",
-                "Ruby"
-            ]
+            "item": "Garden Rolls",
+            "price": 595,
         }
+        {
+            "item": "Fresh Spring Rolls",
+            "price": 525,
+        }
+        {
+            "item": "Shrimp In The Blanket",
+            "price": 795,
+        }
+        {
+            "item": "Yellow Curry",
+            "price": 950,
+        }
+        {
+            "item": "Pad Thai",
+            "price": 895,
+        }
+        {
+            "item": "Tropical Fried Rice",
+            "price": 895,
+        }
+        {
+            "item": "Thai Iced Coffee",
+            "price": 250,
+        }
+        {
+            "item": "Thai Iced Tea With Tapioca",
+            "price": 350,
+        }
+        {
+            "item": "Thai Iced Tea",
+            "price": 250,
+        }
+        {
+            "item": "Honey Banana",
+            "price": 595,
+        }
+        {
+            "item": "Sticky Rice And Ice Cream",
+            "price": 695,
+        }
+        {
+            "item": "Coconut Ice Cream",
+            "price": 350,
+        }
+        
 
 + Response 201 (application/json)
 
